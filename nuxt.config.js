@@ -39,10 +39,15 @@ export default {
     '@nuxtjs/pwa',
   ],
 
+  // publicRuntimeConfig: {
+  //   apiUrl: process.env.API_URL,
+  //   imagesUrl: process.env.IMAGES_URL
+  // },
+
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: 'http://127.0.0.1:8000/graphql',
+        httpEndpoint: 'https://footballstatsapp.azurewebsites.net/graphql',
       }
     },
   },

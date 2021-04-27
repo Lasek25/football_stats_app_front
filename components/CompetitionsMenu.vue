@@ -4,7 +4,10 @@
       <v-tabs-slider color="teal lighten-3"></v-tabs-slider>
       <v-tab v-if="isMatchesPage" @click="setCompetition(0)">
         Wszystkie
-        <v-img src="http://127.0.0.1:8887/worldwide.png" class="ml-3" />
+        <v-img
+          src="https://fsadata.blob.core.windows.net/images/country-flags/worldwide.png"
+          class="ml-3"
+        />
       </v-tab>
       <v-tab
         v-for="ct in competitionsTypes"
@@ -12,7 +15,14 @@
         @click="setCompetition(ct)"
       >
         {{ ct.country }}
-        <v-img :src="`http://127.0.0.1:8887/${ct.country}.png`" class="ml-3" />
+        <!-- <v-img
+          :src="`${$config.imagesUrl}/country-flags/${ct.country}.png`"
+          class="ml-3"
+        /> -->
+        <v-img
+          :src="`https://fsadata.blob.core.windows.net/images/country-flags/${ct.country}.png`"
+          class="ml-3"
+        />
       </v-tab>
     </v-tabs>
     <v-tabs
