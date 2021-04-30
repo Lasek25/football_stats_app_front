@@ -48,7 +48,7 @@ export default {
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: 'https://apifootballstatsapp.azurewebsites.net/graphql',
+        httpEndpoint: 'https://apifootballstatsapp.herokuapp.com/graphql',
         // httpEndpoint: 'http://127.0.0.1:8000/graphql',
       }
     },
