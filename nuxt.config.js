@@ -12,7 +12,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/fsa.ico' }],
+    link: [{ rel: 'fsa-icon', type: 'image/x-icon', href: '/fsa.ico' }],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -90,6 +90,17 @@ export default {
         },
       },
     },
+  },
+
+  pwa: {
+    icon: {
+      fileName: 'fsa-icon.png',
+    },
+    manifest: {
+      name: 'Football Stats App',
+      lang: 'pl',
+      background_color: '#1E1E1E',
+    }
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
