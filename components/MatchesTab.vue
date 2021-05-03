@@ -47,8 +47,14 @@
               </td> -->
               <td class="text-center d-sm-table-cell d-block">
                 <div class="justify-center align-center d-flex">
-                  <img
+                  <!-- <img
                     :src="`TeamLogo/${match.teamsInMatches[0].teamsInCompetition.team.id}.png`"
+                    width="20px"
+                    height="20px"
+                    class="mr-2"
+                  /> -->
+                  <img
+                    :src="`https://res.cloudinary.com/fsadata/image/upload/v1619999264/images/${match.teamsInMatches[0].teamsInCompetition.team.logoURL}`"
                     width="20px"
                     height="20px"
                     class="mr-2"
@@ -96,8 +102,14 @@
                   > -->
                     {{ match.teamsInMatches[1].teamsInCompetition.team.name }}
                   </span>
-                  <img
+                  <!-- <img
                     :src="`TeamLogo/${match.teamsInMatches[1].teamsInCompetition.team.id}.png`"
+                    width="20px"
+                    height="20px"
+                    class="ml-2"
+                  /> -->
+                  <img
+                    :src="`https://res.cloudinary.com/fsadata/image/upload/v1619999264/images/${match.teamsInMatches[1].teamsInCompetition.team.logoURL}`"
                     width="20px"
                     height="20px"
                     class="ml-2"
@@ -199,6 +211,7 @@ export default {
                 team {
                   id
                   name
+                  logoURL
                 }
               }
             }

@@ -126,8 +126,13 @@
                       </v-chip>
                     </v-col>
                     <v-col class="d-flex justify-center col-2 col-sm-1">
-                      <img
+                      <!-- <img
                         :src="`TeamLogo/${aq.teamsInCompetition.team.id}.png`"
+                        width="25px"
+                        height="25px"
+                      /> -->
+                      <img
+                        :src="`https://res.cloudinary.com/fsadata/image/upload/v1619999264/images/${aq.teamsInCompetition.team.logoURL}`"
                         width="25px"
                         height="25px"
                       />
@@ -283,6 +288,7 @@ export default {
               team {
                 id
                 name
+                logoURL
               }
               competition {
                 id

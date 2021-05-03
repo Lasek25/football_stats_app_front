@@ -76,8 +76,13 @@
             {{ sumType(r.goalsScored) + ':' + sumType(r.goalsAgainst) }}
           </v-col>
           <v-col class="d-flex justify-center col-2">
-            <img
+            <!-- <img
               :src="`TeamLogo/${r.teamsInCompetition.team.id}.png`"
+              width="25px"
+              height="25px"
+            /> -->
+            <img
+              :src="`https://res.cloudinary.com/fsadata/image/upload/v1619999264/images/${r.teamsInCompetition.team.logoURL}`"
               width="25px"
               height="25px"
             />
@@ -165,6 +170,7 @@ export default {
               team {
                 id
                 name
+                logoURL
               }
               competition {
                 id

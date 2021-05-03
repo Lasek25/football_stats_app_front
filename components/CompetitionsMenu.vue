@@ -5,7 +5,7 @@
       <v-tab v-if="isMatchesPage" @click="setCompetition(0)">
         Wszystkie
         <v-img
-          src="https://fsadata.blob.core.windows.net/images/country-flags/worldwide.png"
+          src="https://res.cloudinary.com/fsadata/image/upload/v1619998952/images/country-flags/worldwide.png"
           class="ml-3"
         />
       </v-tab>
@@ -20,7 +20,7 @@
           class="ml-3"
         /> -->
         <v-img
-          :src="`https://fsadata.blob.core.windows.net/images/country-flags/${ct.country}.png`"
+          :src="`https://res.cloudinary.com/fsadata/image/upload/v1619998952/images/${ct.logoURL}`"
           class="ml-3"
         />
       </v-tab>
@@ -116,6 +116,7 @@ export default {
             id
             name
             country
+            logoURL
             competitions {
               id
               name

@@ -7,8 +7,16 @@
       <v-row class="mt-3 mt-sm-0">
         <v-col class="d-inline-flex" cols="12" sm="8" lg="9">
           <v-card class="white mr-5">
-            <img
+            <!-- <img
               :src="`CompetitionLogo/c${competitionId}.png`"
+              :width="getWindowWidth < 600 ? '50px' : '80px'"
+              :height="getWindowWidth < 600 ? '50px' : '80px'"
+              class="mt-2 mr-2 ml-2"
+            /> -->
+            <img
+              :src="`https://res.cloudinary.com/fsadata/image/upload/v1619999264/images/${
+                competitions[competitionId - 1].logoURL
+              }`"
               :width="getWindowWidth < 600 ? '50px' : '80px'"
               :height="getWindowWidth < 600 ? '50px' : '80px'"
               class="mt-2 mr-2 ml-2"
@@ -107,6 +115,7 @@ export default {
           competitions {
             id
             name
+            logoURL
             competitionsType {
               id
               country
