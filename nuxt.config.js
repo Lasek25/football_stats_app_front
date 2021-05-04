@@ -95,9 +95,11 @@ export default {
   pwa: {
     icon: {
       fileName: 'fsa-icon.png',
+      sizes: [16, 24, 32, 64, 120, 144, 152, 192, 384, 512]
     },
     manifest: {
       name: 'Football Stats App',
+      short_name: 'Football Stats App',
       lang: 'pl',
       background_color: '#1E1E1E',
     }
