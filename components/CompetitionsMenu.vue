@@ -10,7 +10,7 @@
         />
       </v-tab>
       <v-tab
-        v-for="ct in competitionsTypes"
+        v-for="ct in sortedCompetitionsTypes"
         :key="ct.id"
         @click="setCompetition(ct)"
       >
@@ -74,6 +74,12 @@ export default {
     },
     competitionId() {
       return this.$store.getters.getCompetitionId
+    },
+    sortedCompetitionsTypes() {
+      return [...this.competitionsTypes].sort((a, b) => {
+        if (a.country > b.country) return 1
+        else return -1
+      })
     },
   },
   methods: {
