@@ -128,9 +128,11 @@ export default {
   },
   methods: {
     sumType(teamType) {
-      return teamType.reduce(function (a, b) {
-        return a + b
-      })
+      if (teamType.length > 0) {
+        return teamType.reduce(function (a, b) {
+          return a + b
+        })
+      } else return 0
     },
     sortResults(type) {
       // console.log('sorting')

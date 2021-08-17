@@ -60,13 +60,41 @@ import CompetitionsTab from '../components/CompetitionsTab.vue'
 import MatchesTab from '../components/MatchesTab.vue'
 import BestTab from '../components/BestTab.vue'
 import CompetitionsMenu from '../components/CompetitionsMenu.vue'
+
+const COMPETITIONS_QUERY = gql`
+  query getCompetitions {
+    competitions {
+      id
+      name
+      logoURL
+      competitionsType {
+        id
+        country
+      }
+    }
+  }
+`
+
 export default {
   components: { CompetitionsTab, MatchesTab, BestTab, CompetitionsMenu },
+
+  async asyncData({ app }) {
+    const client = app.apolloProvider.defaultClient
+
+    const res = await client.query({
+      query: COMPETITIONS_QUERY,
+    })
+
+    const { competitions } = res.data
+    return {
+      competitions,
+    }
+  },
+
   data() {
     return {
       activeCompetition: '0',
       competitionsTypeId: '1',
-      competitions: [],
       selectDT: {
         title: 'TABELA',
         value: 'competitions-tab',
@@ -87,6 +115,7 @@ export default {
       ],
     }
   },
+
   computed: {
     getWindowWidth() {
       return this.$vuetify.breakpoint.width
@@ -107,23 +136,6 @@ export default {
     this.$store.commit('setCompetitionId', 1)
     this.$store.commit('setToggleMatchesQuantity', 0)
     this.$store.commit('setToggleDaysRange', 0)
-  },
-  apollo: {
-    competitions: {
-      query: gql`
-        query getCompetitions {
-          competitions {
-            id
-            name
-            logoURL
-            competitionsType {
-              id
-              country
-            }
-          }
-        }
-      `,
-    },
   },
 }
 </script>
