@@ -2,7 +2,7 @@
 
 ## General Informations
 This repo contains frontend of Football Stats App. It is a server-side rendering (SSR) web application which help users to get data about matches results, the football schedule, as well as statistics of the best football teams. Read more about the application in two others repo of this project ([scrapers](https://github.com/Lasek25/football_stats_app_scrapers) and [backend](https://github.com/Lasek25/football_stats_app)).  
-Feel free to test Football Stats App here: [https://footballstatsapplication.herokuapp.com](https://footballstatsapplication.herokuapp.com)
+Feel free to test Football Stats App here (sometimes first loading may take a few seconds): [https://footballstatsapplication.herokuapp.com](https://footballstatsapplication.herokuapp.com)
 
 ## Tech Stack
 * [Nuxt.js](https://nuxtjs.org/) - Vue.js framework (version: 2.14.6)
@@ -26,8 +26,20 @@ Feel free to test Football Stats App here: [https://footballstatsapplication.her
     * enjoy fully responsive app on all of your devices (computers, smartphones and tablets)
 
 ## Instalation
-1. 
+1. Download or clone this repo with git clone `https://github.com/Lasek25/football_stats_app_front.git` command
+2. Run command `yarn install` to install all dependencies
+3. You can test application with official API (first `httpEndpoint`) or locally (second `httpEndpoint`, you should first install [backend of Football Stats App](https://github.com/Lasek25/football_stats_app)). Comment chosen line in `nuxt.config.js`:
+```
+apollo: {
+    clientConfigs: {
+      default: {
+        // httpEndpoint: 'https://apifootballstatsapp.herokuapp.com/graphql',
+        httpEndpoint: 'http://127.0.0.1:8000/graphql',
+      }
+    },
+  },
+```
+4. Finally run app using `yarn run dev` command
 
 ## Usage
-You can download application to your smartphone, open your browser’s settings and tap *Add to home screen* (only for android users)
-
+Football Stats App is ready to use (sometimes first loading may take a few seconds): [https://footballstatsapplication.herokuapp.com](https://footballstatsapplication.herokuapp.com). You can also download application to your smartphone, open your browser’s settings and tap *Add to home screen* (only for android users).
